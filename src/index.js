@@ -9,7 +9,7 @@ const authV1=require("./routers/AuthRouter.js");
 
 
 
-require("./db/index.js");
+require("./database/index.js");
 app.use(express.static('public'));
 app.use(express.json());
 app.use(

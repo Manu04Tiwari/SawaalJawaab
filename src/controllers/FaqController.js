@@ -8,7 +8,7 @@ exports.createFAQ = async (req, res) => {
     await faq.save();
     res.status(201).json(faq);
   } catch (error) {
-    res.status(500).json({ message: "Error creating FAQ", error });
+    res.status(500).json({ message: "Some issues on our side might have occured while creating your FAQs....rest assured we'll fix it", error });
   }
 };
 
@@ -20,7 +20,7 @@ exports.getFAQs = async (req, res) => {
     const translatedFaqs = await Promise.all(faqs.map(faq => faq.getTranslatedText(lang)));
     res.json(translatedFaqs);
   } catch (error) {
-    res.status(500).json({ message: "Error fetching FAQs", error });
+    res.status(500).json({ message: "Some issues on our side might have occured while fetching your translated FAQs....rest assured we'll fix it", error });
   }
 };
 
@@ -30,10 +30,10 @@ exports.getFAQById = async (req, res) => {
     const { id } = req.params;
     const lang = req.query.lang || "en";
     const faq = await FAQ.findById(id);
-    if (!faq) return res.status(404).json({ message: "FAQ not found" });
+    if (!faq) return res.status(404).json({ message: "Some issues on our side might have occured while searching your FAQs....rest assured we'll fix it" });
     res.json(await faq.getTranslatedText(lang));
   } catch (error) {
-    res.status(500).json({ message: "Error fetching FAQ", error });
+    res.status(500).json({ message: "Some issues on our side might have occured while fetching your FAQs....rest assured we'll fix it", error });
   }
 };
 
@@ -43,10 +43,10 @@ exports.updateFAQ = async (req, res) => {
     const { id } = req.params;
     const { question, answer } = req.body;
     const faq = await FAQ.findByIdAndUpdate(id, { question, answer }, { new: true });
-    if (!faq) return res.status(404).json({ message: "FAQ not found" });
+    if (!faq) return res.status(404).json({ message: "Some issues on our side might have occured while searching your FAQs....rest assured we'll fix it" });
     res.json(faq);
   } catch (error) {
-    res.status(500).json({ message: "Error updating FAQ", error });
+    res.status(500).json({ message: "Some issues on our side might have occured while updating your FAQs....rest assured we'll fix it", error });
   }
 };
 
@@ -55,9 +55,9 @@ exports.deleteFAQ = async (req, res) => {
   try {
     const { id } = req.params;
     const faq = await FAQ.findByIdAndDelete(id);
-    if (!faq) return res.status(404).json({ message: "FAQ not found" });
-    res.json({ message: "FAQ deleted successfully" });
+    if (!faq) return res.status(404).json({ message: "Some issues on our side might have occured while searching your FAQs....rest assured we'll fix it" });
+    res.json({ message: "Oonoo!! You deleted a FAQ." });
   } catch (error) {
-    res.status(500).json({ message: "Error deleting FAQ", error });
+    res.status(500).json({ message: "Some issues on our side might have occured while deleting your FAQs....rest assured we'll fix it", error });
   }
 };

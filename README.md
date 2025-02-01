@@ -1,16 +1,16 @@
-# FAQ Management System
+# Sawaal Jawaab
 
-This is a simple FAQ management system built using **Express.js** and **MongoDB**, allowing users to register, log in, and access frequently asked questions (FAQs) with multilingual support.
+Welcome to Sawaal-Jawaab, a simple FAQ management system built using **Express.js** and **MongoDB**. This revolutionary system allow users to register, log in, and access frequently asked questions (FAQs) in their own language, thus supporting the diversity of users of **Bharat**(**India**).
 
 ## Features
 
-- **User Management:**
+- **Helping Users with:**
   - Register a new user
-  - Login to an existing user account
+  - Login to their existing account
   
-- **FAQ Management:**
-  - CRUD operations for FAQs (Create, Read, Update, Delete)
-  - Translations for FAQs to support multiple languages
+- **Sawaal-Jawaab (Questionair):**
+  - CRUD operations for FAQs (Create, Read, Update, Delete).
+  - Translations for FAQs to support multiple languages.
 
 ## Installation
 
