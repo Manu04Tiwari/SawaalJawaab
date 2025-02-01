@@ -1,263 +1,121 @@
-# Sawaal Jawaab
+### Sawaal-Jawaab
 
-Welcome to Sawaal-Jawaab, a simple FAQ management system built using **Express.js** and **MongoDB**. This revolutionary system allow users to register, log in, and access frequently asked questions (FAQs) in their own language, thus supporting the diversity of users of **Bharat**(**India**).
+## 📌  Overview
 
-## Features
+Sawaal-Jawaab is a web-based application designed to create, manage, and display frequently asked questions (FAQs). It includes features like:
 
-- **Helping Users with:**
-  - Register a new user
-  - Login to their existing account
-  
-- **Sawaal-Jawaab (Questionair):**
-  - CRUD operations for FAQs (Create, Read, Update, Delete).
-  - Translations for FAQs to support multiple languages.
+Adding, updating, and deleting FAQs
 
-## Installation
+Rich text editing for answers (using React-Quill)
 
-1. Clone the repository:
-    ```bash
-    git clone <repository-url>
-    cd <repository-directory>
-    ```
+Language-specific translations
 
-2. Install the dependencies:
-    ```bash
-    npm install
-    ```
+MySQL database for storage
 
-3. Set up your `.env` file with MongoDB URI and any other necessary environment variables.
+🛠 Tech Stack
 
-4. Start the application:
-    ```bash
-    npm start
-    ```
+Frontend: React.js
 
-The app will be running at `http://localhost:3000` by default.
+Backend: Node.js with Express.js
 
-## API Endpoints
+Database: MySQL with Sequelize ORM
 
-### Authentication Routes (Auth)
+Additional Libraries: Axios, React-Quill, dotenv
 
-#### **POST /register**
+🚀 Getting Started
 
-- **Description**: Registers a new user.
-- **Request Body**:
-    ```json
-    {
-      "username": "string",
-      "email": "string",
-      "password": "string"
-    }
-    ```
-- **Response**:
-  - **Success (201)**:
-    ```json
-    {
-      "message": "User registered successfully"
-    }
-    ```
-  - **Error (400)**: Invalid input or existing user.
+1️⃣ Clone the Repository
 
-#### **POST /login**
+git clone https://github.com/Manu04Tiwari/SawaalJawaab.git
+cd faq-management
 
-- **Description**: Logs in an existing user.
-- **Request Body**:
-    ```json
-    {
-      "email": "string",
-      "password": "string"
-    }
-    ```
-- **Response**:
-  - **Success (200)**:
-    ```json
-    {
-      "message": "Login successful",
-      "token": "jwt-token"
-    }
-    ```
-  - **Error (401)**: Invalid email or password.
+2️⃣ Backend Setup (Node.js + Express + MySQL)
 
-### FAQ Routes (v1)
+Install Dependencies
 
-#### **GET /faq**
+cd faq-system
+npm install
 
-- **Description**: Retrieves a list of FAQs.
-- **Query Parameters**:
-  - `lang` (optional): The language code (default is `en`).
-- **Response**:
-  - **Success (200)**:
-    ```json
-    [
-      {
-        "question": "Question text",
-        "answer": "Answer text"
-      },
-      {
-        "question": "Another question",
-        "answer": "Another answer"
-      }
-    ]
-    ```
-  - **Error (500)**: Internal server error.
+Configure Environment Variables
 
-#### **POST /faq**
+Create a .env file in faq-system and set up the database credentials:
 
-- **Description**: Creates a new FAQ.
-- **Request Body**:
-    ```json
-    {
-      "question": "string",
-      "answer": "string"
-    }
-    ```
-- **Response**:
-  - **Success (201)**:
-    ```json
-    {
-      "question": "string",
-      "answer": "string",
-      "translations": {}
-    }
-    ```
-  - **Error (500)**: Internal server error or invalid input.
+DB_HOST=localhost
+DB_USER=root
+DB_PASSWORD=yourpassword
+DB_NAME=faq_db
+PORT=5000
 
-#### **GET /faq/:id**
+Run Migrations & Start Server
 
-- **Description**: Retrieves a single FAQ by ID.
-- **Parameters**:
-  - `id`: The FAQ ID.
-- **Query Parameters**:
-  - `lang` (optional): The language code (default is `en`).
-- **Response**:
-  - **Success (200)**:
-    ```json
-    {
-      "question": "translated question text",
-      "answer": "translated answer text"
-    }
-    ```
-  - **Error (404)**: FAQ not found.
-  - **Error (500)**: Internal server error.
+npx sequelize-cli db:migrate
+npm start
 
-#### **PUT /faq/:id**
+3️⃣ Frontend Setup (React.js)
 
-- **Description**: Updates an existing FAQ by ID.
-- **Parameters**:
-  - `id`: The FAQ ID.
-- **Request Body**:
-    ```json
-    {
-      "question": "updated question",
-      "answer": "updated answer"
-    }
-    ```
-- **Response**:
-  - **Success (200)**:
-    ```json
-    {
-      "question": "updated question",
-      "answer": "updated answer",
-      "translations": {}
-    }
-    ```
-  - **Error (404)**: FAQ not found.
-  - **Error (500)**: Internal server error.
+Install Dependencies
 
-#### **DELETE /faq/:id**
+cd ../faq-client
+npm install
 
-- **Description**: Deletes an FAQ by ID.
-- **Parameters**:
-  - `id`: The FAQ ID.
-- **Response**:
-  - **Success (200)**:
-    ```json
-    {
-      "message": "FAQ deleted successfully"
-    }
-    ```
-  - **Error (404)**: FAQ not found.
-  - **Error (500)**: Internal server error.
+Start React App
 
-### User Routes (v1)
+npm start
 
-#### **GET /user**
+📂 Project Structure
 
-- **Description**: Retrieves the details of the current logged-in user.
-- **Response**:
-  - **Success (200)**:
-    ```json
-    {
-      "username": "string",
-      "email": "string"
-    }
-    ```
-  - **Error (401)**: Unauthorized (if not logged in).
+faq-management/
+│-- faq-system/  # Backend (Node.js, Express.js, MySQL)
+│   │-- models/  # Sequelize Models
+│   │-- routes/  # Express Routes
+│   │-- server.js
+│
+│-- faq-client/  # Frontend (React.js)
+│   │-- src/
+│   │   │-- components/
+│   │   │-- App.js
+│   │   │-- index.js
+│
+│-- README.md
 
-#### **PATCH /user**
+✅ Features
 
-- **Description**: Updates the logged-in user's details.
-- **Request Body**:
-    ```json
-    {
-      "username": "string",
-      "email": "string"
-    }
-    ```
-- **Response**:
-  - **Success (200)**:
-    ```json
-    {
-      "message": "User updated successfully",
-      "user": {
-        "username": "updated string",
-        "email": "updated string"
-      }
-    }
-    ```
-  - **Error (400)**: Invalid input.
+CRUD operations for FAQs
 
-#### **DELETE /user**
+Rich text editing support (React-Quill)
 
-- **Description**: Deletes the current logged-in user.
-- **Response**:
-  - **Success (200)**:
-    ```json
-    {
-      "message": "User deleted successfully"
-    }
-    ```
-  - **Error (401)**: Unauthorized (if not logged in).
+Multi-language translations
 
-## Database
+MySQL database integration
 
-This application uses MongoDB for storing user information and FAQ data. The FAQ schema also includes a translations map that stores translations for different languages.
+REST API with Express.js
 
-## Dependencies
+🔧 Troubleshooting
 
-- **express**: Web framework for Node.js
-- **mongoose**: MongoDB ODM
-- **@vitalets/google-translate-api**: Library for language translation
-- **dotenv**: Environment variable management
-- **body-parser**: Middleware to parse JSON requests
+1️⃣ Blank Screen in React
 
-## Running Tests
+Check the browser console (F12 > Console) for errors.
 
-To run tests, ensure that you have set up test configurations and MongoDB in the environment. Then use a testing library like Jest or Mocha to run the tests.
+Ensure the backend is running and accessible (http://localhost:5000).
 
-## Contributing
+2️⃣ Database Connection Issues
 
-Feel free to fork this project and submit issues or pull requests. All contributions are welcome!
+Verify MySQL is running.
 
-## License
+Check credentials in .env file.
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+3️⃣ react_dom_1.default.findDOMNode is not a function
 
----
+Ensure React version is compatible with dependencies.
 
-### What’s Included:
-- Detailed API documentation with all routes and their respective request/response formats.
-- Full descriptions of parameters, body data, and response examples for both success and error cases.
-- Information about the database and dependencies.
+Try downgrading React-Quill: npm install react-quill@2.0.0-beta.2
 
-This version should serve as a thorough reference for both developers and users interacting with your API. Let me know if there's anything more you'd like to add!
+📜 License
+
+This project is licensed under the MIT License.
+
+✨ Contributors
+
+Your Name - Manu Tiwari
+
+Feel free to contribute and improve this project! 🚀
