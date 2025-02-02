@@ -1,121 +1,63 @@
-### Sawaal-Jawaab
+# Sawaal Jawaab
 
-## 📌  Overview
+Sawaal-Jawaab is a simple FAQ management system built using **Express.js** and **MongoDB**, harnessing the special features by providing users to register, log in, and access FAQs, thus embracing the diversity of **Bharat**
 
-Sawaal-Jawaab is a web-based application designed to create, manage, and display frequently asked questions (FAQs). It includes features like:
+Feel free to access it here too 
+![Atlas Connection](images\done_success.png)
+## Features
 
-Adding, updating, and deleting FAQs
+- **Sawaal-Jawaab Users:**
+  - Register a new user
+  - Allow login to thier existing account
+  
+- **FAQ Management:**
+  - CRUD operations for FAQs (Create, Read, Update, Delete)
+  - Translations for FAQs to support various languages.
 
-Rich text editing for answers (using React-Quill)
+## Installation
 
-Language-specific translations
+1. Clone the repository:
+    ```bash
+    git clone <https://github.com/Manu04Tiwari/SawaalJawaab.git>
+    ```
 
-MySQL database for storage
+2. Install the dependencies:
+    ```bash
+    npm install
+    ```
 
-🛠 Tech Stack
+3. Set up your `.env` file with MongoDB URI and any other necessary environment variables.
+   ```bash
+   DB_URL=mongodb+srv://User1:Martina04@clustersawaaljawab.5dbw2.mongodb.net/?retryWrites=true&w=majority&appName=ClusterSawaalJawab
+   PORT=3002
+   ```
 
-Frontend: React.js
+4. Start the application:
+    ```bash
+    npm run dev
+    ```
 
-Backend: Node.js with Express.js
+The app will be running at `http://localhost:3000` by default.
 
-Database: MySQL with Sequelize ORM
+![Database Connected](images\connected.png)
+## Dependencies
 
-Additional Libraries: Axios, React-Quill, dotenv
+- **express**: Web framework for Node.js
+- **mongoose**: MongoDB ODM
+- **@vitalets/google-translate-api**: Library for language translation
+- **dotenv**: Environment variable management
+- **body-parser**: Middleware to parse JSON requests
 
-🚀 Getting Started
+## Running Tests
 
-1️⃣ Clone the Repository
+To run tests, ensure that you have set up test configurations and MongoDB in the environment. Then use a testing library like Jest or Mocha to run the tests.
+![Running Successfully](images\running.png)
 
-git clone https://github.com/Manu04Tiwari/SawaalJawaab.git
-cd faq-management
+## Contributing
 
-2️⃣ Backend Setup (Node.js + Express + MySQL)
+Feel free to fork this project and submit issues or pull requests. All contributions are welcome!
 
-Install Dependencies
-
-cd faq-system
-npm install
-
-Configure Environment Variables
-
-Create a .env file in faq-system and set up the database credentials:
-
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=yourpassword
-DB_NAME=faq_db
-PORT=5000
-
-Run Migrations & Start Server
-
-npx sequelize-cli db:migrate
-npm start
-
-3️⃣ Frontend Setup (React.js)
-
-Install Dependencies
-
-cd ../faq-client
-npm install
-
-Start React App
-
-npm start
-
-📂 Project Structure
-
-faq-management/
-│-- faq-system/  # Backend (Node.js, Express.js, MySQL)
-│   │-- models/  # Sequelize Models
-│   │-- routes/  # Express Routes
-│   │-- server.js
-│
-│-- faq-client/  # Frontend (React.js)
-│   │-- src/
-│   │   │-- components/
-│   │   │-- App.js
-│   │   │-- index.js
-│
-│-- README.md
-
-✅ Features
-
-CRUD operations for FAQs
-
-Rich text editing support (React-Quill)
-
-Multi-language translations
-
-MySQL database integration
-
-REST API with Express.js
-
-🔧 Troubleshooting
-
-1️⃣ Blank Screen in React
-
-Check the browser console (F12 > Console) for errors.
-
-Ensure the backend is running and accessible (http://localhost:5000).
-
-2️⃣ Database Connection Issues
-
-Verify MySQL is running.
-
-Check credentials in .env file.
-
-3️⃣ react_dom_1.default.findDOMNode is not a function
-
-Ensure React version is compatible with dependencies.
-
-Try downgrading React-Quill: npm install react-quill@2.0.0-beta.2
-
-📜 License
-
-This project is licensed under the MIT License.
-
-✨ Contributors
-
-Your Name - Manu Tiwari
-
-Feel free to contribute and improve this project! 🚀
+## Contact
+Feel free to reach me out at 
+Github: [Manu04Tiwari](https://github.com/Manu04Tiwari)
+Email:  [Marttiwari8219@gmail.com](marttiwari8219@gmail.com)
