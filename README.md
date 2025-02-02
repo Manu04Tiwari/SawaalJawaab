@@ -3,7 +3,7 @@
 Sawaal-Jawaab is a simple FAQ management system built using **Express.js** and **MongoDB**, harnessing the special features by providing users to register, log in, and access FAQs, thus embracing the diversity of **Bharat**
 
 Feel free to access it here too 
-![Atlas Connection](images\done_success.png)
+![Atlas Connection](https://github.com/Manu04Tiwari/SawaalJawaab/blob/main/images/done_success.png)
 ## Features
 
 - **Sawaal-Jawaab Users:**
@@ -39,7 +39,7 @@ Feel free to access it here too
 
 The app will be running at `http://localhost:3000` by default.
 
-![Database Connected](images\connected.png)
+![Database Connected](https://github.com/Manu04Tiwari/SawaalJawaab/blob/main/images/connected.png)
 ## Dependencies
 
 - **express**: Web framework for Node.js
@@ -51,7 +51,7 @@ The app will be running at `http://localhost:3000` by default.
 ## Running Tests
 
 To run tests, ensure that you have set up test configurations and MongoDB in the environment. Then use a testing library like Jest or Mocha to run the tests.
-![Running Successfully](images\running.png)
+![Running Successfully](https://github.com/Manu04Tiwari/SawaalJawaab/blob/main/images/running.png)
 
 ## Contributing
 
@@ -59,5 +59,5 @@ Feel free to fork this project and submit issues or pull requests. All contribut
 
 ## Contact
 Feel free to reach me out at 
-Github: [Manu04Tiwari](https://github.com/Manu04Tiwari)
-Email:  [Marttiwari8219@gmail.com](marttiwari8219@gmail.com)
+- **Github**: [Manu04Tiwari](https://github.com/Manu04Tiwari)
+- **Email**:  [Marttiwari8219@gmail.com](marttiwari8219@gmail.com)
